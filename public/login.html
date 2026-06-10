@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Spense</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/@tabler/core@latest/dist/css/tabler.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<div class="page page-center">
+
+    <div class="container container-tight py-4">
+
+        <div class="text-center mb-4">
+
+            <img src="images/logo.png"
+                 width="100"
+                 class="mb-3">
+
+            <h1 class="fw-bold">
+                Welcome Back
+            </h1>
+
+            <p class="text-secondary">
+                Login to continue using Spense
+            </p>
+
+        </div>
+
+        <div class="card card-md shadow">
+
+            <div class="card-body">
+
+                <form id="loginForm">
+
+                    <div class="mb-3">
+
+                        <label class="form-label">
+                            Email
+                        </label>
+
+                        <input type="email"
+                               class="form-control"
+                               placeholder="Enter email"
+                               required>
+
+                    </div>
+
+                    <div class="mb-3">
+
+                        <label class="form-label">
+                            Password
+                        </label>
+
+                        <input type="password"
+                               id="password"
+                               class="form-control"
+                               placeholder="Enter password"
+                               required>
+
+                    </div>
+
+                    <div class="mb-3">
+
+                        <label class="form-check">
+
+                            <input
+                                type="checkbox"
+                                class="form-check-input"
+                                onclick="togglePassword()">
+
+                            <span class="form-check-label">
+                                Show Password
+                            </span>
+
+                        </label>
+
+                    </div>
+
+                    <div class="form-footer">
+
+                        <button
+                            type="submit"
+                            class="btn btn-primary w-100">
+
+                            Login
+
+                        </button>
+
+                    </div>
+
+                </form>
+
+            </div>
+
+        </div>
+
+        <div class="text-center mt-3">
+
+            Don't have an account?
+
+            <a href="register.html">
+
+                Register
+
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script src="js/login.js"></script>
+
+</body>
+</html>

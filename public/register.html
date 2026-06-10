@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Register - Spense</title>
+
+<link href="https://cdn.jsdelivr.net/npm/@tabler/core@latest/dist/css/tabler.min.css" rel="stylesheet">
+
+<link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<div class="page page-center">
+
+<div class="container container-tight py-4">
+
+<div class="text-center mb-4">
+
+<img src="images/logo.png"
+     width="100"
+     class="mb-3">
+
+<h1 class="fw-bold">
+Create Account
+</h1>
+
+<p class="text-secondary">
+Start tracking your expenses today
+</p>
+
+</div>
+
+<div class="card card-md shadow">
+
+<div class="card-body">
+
+<form id="registerForm">
+
+<div class="mb-3">
+
+<label class="form-label">
+Full Name
+</label>
+
+<input
+type="text"
+class="form-control"
+placeholder="Enter full name"
+required>
+
+</div>
+
+<div class="mb-3">
+
+<label class="form-label">
+Email
+</label>
+
+<input
+type="email"
+class="form-control"
+placeholder="Enter email"
+required>
+
+</div>
+
+<div class="mb-3">
+
+<label class="form-label">
+Password
+</label>
+
+<input
+type="password"
+id="password"
+class="form-control"
+placeholder="Enter password"
+required>
+
+</div>
+
+<div class="mb-3">
+
+<label class="form-label">
+Confirm Password
+</label>
+
+<input
+type="password"
+id="confirmPassword"
+class="form-control"
+placeholder="Confirm password"
+required>
+
+</div>
+
+<div class="mb-3">
+
+<label class="form-check">
+
+<input
+type="checkbox"
+class="form-check-input"
+onclick="togglePassword()">
+
+<span class="form-check-label">
+Show Password
+</span>
+
+</label>
+
+</div>
+
+<div class="form-footer">
+
+<button
+type="submit"
+class="btn btn-primary w-100">
+
+Register
+
+</button>
+
+</div>
+
+</form>
+
+</div>
+
+</div>
+
+<div class="text-center mt-3">
+
+Already have an account?
+
+<a href="login.html">
+Login
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+<script src="js/register.js"></script>
+
+</body>
+</html>

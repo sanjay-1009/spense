@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Admin Dashboard</title>
+
+<link href="https://cdn.jsdelivr.net/npm/@tabler/core@latest/dist/css/tabler.min.css" rel="stylesheet">
+
+<link rel="stylesheet" href="css/admin.css">
+
+</head>
+
+<body>
+
+<div class="page">
+
+<header class="navbar navbar-expand-md shadow-sm">
+
+<div class="container-xl">
+
+<div class="navbar-brand">
+
+<img src="images/logo.png"
+     width="40"
+     class="me-2">
+
+Spense Admin
+
+</div>
+
+<div class="ms-auto">
+
+<span class="badge bg-green">
+Super Admin
+</span>
+
+</div>
+
+</div>
+
+</header>
+
+<div class="page-wrapper">
+
+<div class="container-xl py-4">
+
+<!-- TOP CARDS -->
+
+<div class="row">
+
+<div class="col-md-3">
+
+<div class="card stat-card">
+
+<div class="card-body">
+
+<h4>Total Users</h4>
+
+<h1 id="totalUsers">125</h1>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="col-md-3">
+
+<div class="card stat-card">
+
+<div class="card-body">
+
+<h4>Active Today</h4>
+
+<h1>72</h1>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="col-md-3">
+
+<div class="card stat-card">
+
+<div class="card-body">
+
+<h4>Total Records</h4>
+
+<h1>3245</h1>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="col-md-3">
+
+<div class="card stat-card">
+
+<div class="card-body">
+
+<h4>Monthly Expenses</h4>
+
+<h1>₹2.4L</h1>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- REPORT SECTION -->
+
+<div class="card mt-4">
+
+<div class="card-header">
+Monthly Reports
+</div>
+
+<div class="card-body">
+
+<div class="row">
+
+<div class="col-md-4">
+
+<select class="form-select">
+
+<option>June 2026</option>
+<option>July 2026</option>
+<option>August 2026</option>
+
+</select>
+
+</div>
+
+<div class="col-md-8">
+
+<button class="btn btn-primary">
+
+Download All Users Report
+
+</button>
+
+<button class="btn btn-success">
+
+Download AI Dataset
+
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- USERS TABLE -->
+
+<div class="card mt-4">
+
+<div class="card-header">
+
+Registered Users
+
+</div>
+
+<div class="table-responsive">
+
+<table class="table card-table table-vcenter">
+
+<thead>
+
+<tr>
+
+<th>Name</th>
+<th>Email</th>
+<th>Last Active</th>
+<th>Records</th>
+<th>Actions</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td>Sanjay</td>
+
+<td>sanjay@gmail.com</td>
+
+<td>10-Jun-2026 09:30 AM</td>
+
+<td>245</td>
+
+<td>
+
+<button class="btn btn-primary btn-sm">
+
+View
+
+</button>
+
+<button class="btn btn-success btn-sm">
+
+Excel
+
+</button>
+
+<button class="btn btn-danger btn-sm">
+
+Delete
+
+</button>
+
+</td>
+
+</tr>
+
+<tr>
+
+<td>Arun</td>
+
+<td>arun@gmail.com</td>
+
+<td>09-Jun-2026 11:15 PM</td>
+
+<td>180</td>
+
+<td>
+
+<button class="btn btn-primary btn-sm">
+
+View
+
+</button>
+
+<button class="btn btn-success btn-sm">
+
+Excel
+
+</button>
+
+<button class="btn btn-danger btn-sm">
+
+Delete
+
+</button>
+
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<script src="js/admin.js"></script>
+
+</body>
+
+</html>
