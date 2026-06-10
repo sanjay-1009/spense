@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>User Details - Spense</title>
+
+<link href="https://cdn.jsdelivr.net/npm/@tabler/core@latest/dist/css/tabler.min.css" rel="stylesheet">
+
+<link rel="stylesheet" href="css/user-details.css">
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+
+<body>
+
+<div class="container-xl py-4">
+
+<div class="d-flex justify-content-between align-items-center mb-4">
+
+<h1>User Details</h1>
+
+<button class="btn btn-success">
+
+Download Excel Report
+
+</button>
+
+</div>
+
+<!-- PROFILE -->
+
+<div class="card mb-4">
+
+<div class="card-body">
+
+<div class="row">
+
+<div class="col-md-3 text-center">
+
+<div class="avatar avatar-xl mb-3">
+S
+</div>
+
+<h3>Sanjay</h3>
+
+</div>
+
+<div class="col-md-9">
+
+<div class="row">
+
+<div class="col-md-6">
+<p><strong>Email:</strong> sanjay@gmail.com</p>
+</div>
+
+<div class="col-md-6">
+<p><strong>Role:</strong> User</p>
+</div>
+
+<div class="col-md-6">
+<p><strong>Last Active:</strong> 10-Jun-2026 09:45 AM</p>
+</div>
+
+<div class="col-md-6">
+<p><strong>Total Records:</strong> 245</p>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- STATS -->
+
+<div class="row mb-4">
+
+<div class="col-md-4">
+
+<div class="card stat-card">
+
+<div class="card-body">
+
+<h5>Today's Spend</h5>
+
+<h1>₹450</h1>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="col-md-4">
+
+<div class="card stat-card">
+
+<div class="card-body">
+
+<h5>Monthly Spend</h5>
+
+<h1>₹8,500</h1>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="col-md-4">
+
+<div class="card stat-card">
+
+<div class="card-body">
+
+<h5>Average / Day</h5>
+
+<h1>₹283</h1>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- CHART -->
+
+<div class="card mb-4">
+
+<div class="card-header">
+
+Monthly Expense Trend
+
+</div>
+
+<div class="card-body">
+
+<canvas id="expenseChart"></canvas>
+
+</div>
+
+</div>
+
+<!-- TABLE -->
+
+<div class="card">
+
+<div class="card-header">
+
+Recent Expenses
+
+</div>
+
+<div class="table-responsive">
+
+<table class="table card-table">
+
+<thead>
+
+<tr>
+
+<th>Date</th>
+<th>Food</th>
+<th>Travel</th>
+<th>CLG</th>
+<th>Misc</th>
+<th>Total</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+<td>10-Jun-2026</td>
+<td>150</td>
+<td>50</td>
+<td>100</td>
+<td>30</td>
+<td>330</td>
+</tr>
+
+<tr>
+<td>09-Jun-2026</td>
+<td>100</td>
+<td>0</td>
+<td>200</td>
+<td>20</td>
+<td>320</td>
+</tr>
+
+</tbody>
+
+</table>
+
+</div>
+
+</div>
+
+</div>
+
+<script src="js/user-details.js"></script>
+
+</body>
+<div class="spinner-overlay" id="spinner">
+
+<div class="spinner"></div>
+
+</div>
+
+</html>

@@ -1,0 +1,145 @@
+body{
+margin:0;
+background:#f4f6fa;
+font-family:Inter,sans-serif;
+}
+
+.layout{
+display:flex;
+min-height:100vh;
+}
+
+.sidebar{
+width:250px;
+background:#1f2937;
+color:white;
+padding:20px;
+}
+
+.sidebar-logo{
+text-align:center;
+margin-bottom:30px;
+}
+
+.sidebar ul{
+list-style:none;
+padding:0;
+}
+
+.sidebar li{
+margin-bottom:15px;
+}
+
+.sidebar a{
+color:white;
+text-decoration:none;
+display:block;
+padding:10px;
+border-radius:8px;
+}
+
+.sidebar a:hover{
+background:#374151;
+}
+
+.content{
+flex:1;
+padding:20px;
+}
+.custom-toast{
+
+position:fixed;
+bottom:20px;
+right:20px;
+
+background:#22c55e;
+color:white;
+
+padding:12px 20px;
+
+border-radius:10px;
+
+box-shadow:0 4px 10px rgba(0,0,0,.2);
+
+z-index:9999;
+}
+.spinner-overlay{
+
+position:fixed;
+
+top:0;
+left:0;
+
+width:100%;
+height:100%;
+
+background:rgba(255,255,255,.7);
+
+display:none;
+
+justify-content:center;
+align-items:center;
+
+z-index:9999;
+}
+
+.spinner{
+
+width:50px;
+height:50px;
+
+border:5px solid #ddd;
+border-top:5px solid #206bc4;
+
+border-radius:50%;
+
+animation:spin 1s linear infinite;
+}
+
+@keyframes spin{
+
+100%{
+transform:rotate(360deg);
+}
+}
+.dark-mode{
+    background:#111827;
+    color:white;
+}
+
+.dark-mode .card{
+    background:#1f2937;
+    color:white;
+}
+
+.dark-mode .table{
+    color:white;
+}
+
+.dark-mode .form-control{
+    background:#374151;
+    color:white;
+}
+@media(max-width:768px){
+
+.sidebar{
+position:fixed;
+left:-250px;
+top:0;
+height:100%;
+transition:.3s;
+z-index:999;
+}
+
+.sidebar.active{
+left:0;
+}
+
+.content{
+width:100%;
+}
+
+.mobile-toggle{
+display:block;
+}
+}
