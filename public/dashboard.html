@@ -14,6 +14,7 @@
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 </head>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
 <body>
 
@@ -38,110 +39,95 @@ Spense
 
 <div class="ms-auto">
 
-<span class="text-secondary">
-
-Hello, Sanjay 👋
-
-</span>
+<h4
+id="welcomeUser"
+class="mb-0">
+Welcome
+</h4>
 
 </div>
-
 </div>
 
 </header>
 
 <!-- PAGE -->
 
-<div class="page-wrapper">
 
-<div class="container-xl py-4">
-
-<!-- CARDS -->
-
-<div class="row">
-
-<div class="col-md-3">
-
-<div class="card stat-card">
-
-<div class="card-body">
-
-<h4>Today's Spend</h4>
-
-<h1>₹450</h1>
-
-</div>
-
-</div>
-
-</div>
-
-<div class="col-md-3">
-
-<div class="card stat-card">
-
-<div class="card-body">
-
-<h4>Monthly Spend</h4>
-
-<h1>₹8,500</h1>
-
-</div>
-
-</div>
-
-</div>
-
-<div class="col-md-3">
-
-<div class="card stat-card">
-
-<div class="card-body">
-
-<h4>Avg / Day</h4>
-
-<h1>₹283</h1>
-
-</div>
-
-</div>
-
-</div>
-
-<div class="col-md-3">
-
-<div class="card stat-card">
-
-<div class="card-body">
-
-<h4>Avg / Month</h4>
-
-<h1>₹8,500</h1>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
 
 <!-- ADD BUTTON -->
 
 <div class="mt-4 mb-4">
 
 <button
-class="btn btn-primary btn-lg"
-data-bs-toggle="modal"
-data-bs-target="#expenseModal">
+    class="btn btn-primary mt-3"
+    data-bs-toggle="modal"
+    data-bs-target="#expenseModal">
 
-+ Add Expense
+    + Add Expense
 
 </button>
 
 </div>
 
-<!-- CHARTS -->
+<!-- CHARTS --><div class="row g-3 mt-3">
+
+    <div class="col-md-3">
+        <div class="card">
+            <div class="card-body">
+                <div class="text-secondary">
+                    Today Spend
+                </div>
+
+                <h2 id="todaySpend">
+                    ₹0
+                </h2>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-3">
+        <div class="card">
+            <div class="card-body">
+                <div class="text-secondary">
+                    Daily Average
+                </div>
+
+                <h2 id="dailyAverage">
+                    ₹0
+                </h2>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-3">
+        <div class="card">
+            <div class="card-body">
+                <div class="text-secondary">
+                    Weekly Average
+                </div>
+
+                <h2 id="weeklyAverage">
+                    ₹0
+                </h2>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-3">
+        <div class="card">
+            <div class="card-body">
+                <div class="text-secondary">
+                    Monthly Average
+                </div>
+
+                <h2 id="monthlyAverage">
+                    ₹0
+                </h2>
+            </div>
+        </div>
+    </div>
+
+</div>
 
 <div class="row">
 
@@ -216,25 +202,7 @@ Recent Expenses
 
 </thead>
 
-<tbody>
-
-<tr>
-<td>10-Jun</td>
-<td>150</td>
-<td>50</td>
-<td>100</td>
-<td>30</td>
-<td>330</td>
-</tr>
-
-<tr>
-<td>09-Jun</td>
-<td>100</td>
-<td>0</td>
-<td>200</td>
-<td>20</td>
-<td>320</td>
-</tr>
+<tbody id="expenseTable">
 
 </tbody>
 
@@ -252,9 +220,48 @@ Recent Expenses
 
 <!-- ADD EXPENSE MODAL -->
 
+
+
+<script src="https://cdn.jsdelivr.net/npm/@tabler/core@latest/dist/js/tabler.min.js"></script>
+
+<script>
+
+document.addEventListener(
+"DOMContentLoaded",
+function(){
+
+const today =
+new Date()
+.toISOString()
+.split("T")[0];
+
+const dateInput =
+document.getElementById(
+"expenseDate"
+);
+
+if(dateInput){
+
+dateInput.value =
+today;
+
+}
+
+});
+
+</script>
+
+
+<div class="spinner-overlay" id="spinner">
+
+<div class="spinner"></div>
+
+</div>
+
 <div
-class="modal modal-blur fade"
-id="expenseModal">
+class="modal fade"
+id="expenseModal"
+tabindex="-1">
 
 <div class="modal-dialog">
 
@@ -262,44 +269,89 @@ id="expenseModal">
 
 <div class="modal-header">
 
-<h5>Add Expense</h5>
+<h3>Add Expense</h3>
+
+<button
+type="button"
+class="btn-close"
+data-bs-dismiss="modal">
+</button>
 
 </div>
 
 <div class="modal-body">
 
-<input
-type="number"
-class="form-control mb-3"
-placeholder="Food">
+<form id="expenseForm">
+
+<div class="mb-3">
+
+<label>Date</label>
 
 <input
-type="number"
-class="form-control mb-3"
-placeholder="Travel">
-
-<input
-type="number"
-class="form-control mb-3"
-placeholder="College">
-
-<input
-type="number"
-class="form-control mb-3"
-placeholder="Misc">
+type="date"
+id="expenseDate"
+class="form-control"
+required>
 
 </div>
 
-<div class="modal-footer">
+<div class="mb-3">
+
+<label>Food</label>
+
+<input
+type="number"
+id="food"
+class="form-control"
+value="0">
+
+</div>
+
+<div class="mb-3">
+
+<label>Travel</label>
+
+<input
+type="number"
+id="travel"
+class="form-control"
+value="0">
+
+</div>
+
+<div class="mb-3">
+
+<label>College</label>
+
+<input
+type="number"
+id="clg"
+class="form-control"
+value="0">
+
+</div>
+
+<div class="mb-3">
+
+<label>Misc</label>
+
+<input
+type="number"
+id="misc"
+class="form-control"
+value="0">
+
+</div>
 
 <button
+type="submit"
 class="btn btn-primary">
 
-Save
+Save Expense
 
 </button>
 
-</div>
+</form>
 
 </div>
 
@@ -307,14 +359,7 @@ Save
 
 </div>
 
-<script src="https://cdn.jsdelivr.net/npm/@tabler/core@latest/dist/js/tabler.min.js"></script>
-
+</div>
 <script src="js/dashboard.js"></script>
-<div class="spinner-overlay" id="spinner">
-
-<div class="spinner"></div>
-
-</div>
-
 </body>
 </html>
