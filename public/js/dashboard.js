@@ -1,3 +1,14 @@
+if(
+!localStorage.getItem(
+"userId"
+)
+){
+
+window.location.href =
+"login.html";
+
+}
+
 console.log(
 document.getElementById("expenseForm")
 );
@@ -62,25 +73,33 @@ async function(e){
         ).value || 0
 
     };
+const expenseId =
+document.getElementById(
+"expenseId"
+).value;
+    
 
     try{
 
         const response =
-        await fetch(
-        "http://localhost:5000/api/expense/add",
-        {
-            method:"POST",
+await fetch(
 
-            headers:{
-                "Content-Type":
-                "application/json"
-            },
+expenseId
+? `http://localhost:5000/api/expense/update/${expenseId}`
+: "http://localhost:5000/api/expense/add",
 
-            body:
-            JSON.stringify(
-                expenseData
-            )
-        });
+{
+    method:
+    expenseId
+    ? "PUT"
+    : "POST",
+
+    headers:{
+        "Content-Type":"application/json"
+    },
+
+    body:JSON.stringify(expenseData)
+});
 
         const data =
         await response.json();
@@ -148,6 +167,28 @@ ${expense.expense_date
 
 <td>
 ₹${expense.total}
+</td>
+
+<td>
+<button
+class="btn btn-warning btn-sm me-1"
+onclick="editExpense(${expense.id})">
+
+Edit
+
+</button>
+
+
+<br><br>
+
+<button
+class="btn btn-danger btn-sm"
+onclick="deleteExpense(${expense.id})">
+
+Delete
+
+</button>
+
 </td>
 
 </tr>
@@ -265,3 +306,121 @@ fetch(
 .catch(error => {
     console.error(error);
 });
+const logoutBtn =
+document.getElementById(
+"logoutBtn"
+);
+
+if(logoutBtn){
+
+logoutBtn.addEventListener(
+"click",
+function(){
+
+localStorage.clear();
+
+window.location.href =
+"login.html";
+
+});
+
+}
+async function deleteExpense(id){
+
+const confirmDelete =
+confirm(
+"Delete this expense?"
+);
+
+if(!confirmDelete){
+
+return;
+
+}
+
+try{
+
+const response =
+await fetch(
+`http://localhost:5000/api/expense/delete/${id}`,
+{
+method:"DELETE"
+}
+);
+
+const data =
+await response.json();
+
+alert(
+data.message
+);
+
+location.reload();
+
+}
+catch(error){
+
+console.error(error);
+
+alert(
+"Delete failed"
+);
+
+}
+
+}
+
+function editExpense(id){
+
+fetch(
+`http://localhost:5000/api/expense/user/${userId}`
+)
+.then(res => res.json())
+.then(data => {
+
+const expense =
+data.find(
+e => e.id == id
+);
+
+document.getElementById(
+"expenseId"
+).value =
+expense.id;
+
+document.getElementById(
+"expenseDate"
+).value =
+expense.expense_date;
+
+document.getElementById(
+"food"
+).value =
+expense.food;
+
+document.getElementById(
+"travel"
+).value =
+expense.travel;
+
+document.getElementById(
+"clg"
+).value =
+expense.clg;
+
+document.getElementById(
+"misc"
+).value =
+expense.misc;
+
+const modal =
+new bootstrap.Modal(
+document.getElementById(
+"expenseModal"
+));
+
+modal.show();
+
+});
+
+}

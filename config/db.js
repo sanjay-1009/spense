@@ -5,7 +5,10 @@ const db = mysql.createConnection({
     host: "localhost",
     user: "root",
     password: "admin",
-    database: "spense_db"
+    database: "spense_db",
+
+    timezone: "+05:30",
+    dateStrings: true
 
 });
 

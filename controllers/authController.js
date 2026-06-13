@@ -8,24 +8,48 @@ const register = async (req, res) => {
 
         const { name, email, password } = req.body;
 
-        const hashedPassword =
-            await bcrypt.hash(password, 10);
-
-        const sql =
-            "INSERT INTO users(name,email,password) VALUES(?,?,?)";
+        // Check if email already exists
+        const checkSql =
+            "SELECT * FROM users WHERE email=?";
 
         db.query(
-            sql,
-            [name, email, hashedPassword],
-            (err, result) => {
+            checkSql,
+            [email],
+            async (err, result) => {
 
                 if (err) {
                     return res.status(500).json(err);
                 }
 
-                res.status(201).json({
-                    message: "User Registered Successfully"
-                });
+                if (result.length > 0) {
+
+                    return res.status(400).json({
+                        message: "Email already exists"
+                    });
+
+                }
+
+                const hashedPassword =
+                    await bcrypt.hash(password, 10);
+
+                const sql =
+                    "INSERT INTO users(name,email,password) VALUES(?,?,?)";
+
+                db.query(
+                    sql,
+                    [name, email, hashedPassword],
+                    (err, result) => {
+
+                        if (err) {
+                            return res.status(500).json(err);
+                        }
+
+                        res.status(201).json({
+                            message: "User Registered Successfully"
+                        });
+
+                    }
+                );
 
             }
         );
