@@ -204,7 +204,7 @@ try{
 
 const response =
 await fetch(
-${API_URL}/api/auth/register",
+'${API_URL}/api/auth/register',
 {
 method:"POST",
 
