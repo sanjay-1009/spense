@@ -1,62 +1,46 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
-
 <head>
+<link rel="manifest" href="manifest.json">
+<link rel="icon" href="images/logo.png">
+<link rel="apple-touch-icon" href="images/logo.png">
+<meta name="theme-color" content="#206bc4">
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Expense History - Spense</title>
-
 <link href="https://cdn.jsdelivr.net/npm/@tabler/core@latest/dist/css/tabler.min.css" rel="stylesheet">
 <link rel="stylesheet" href="css/history.css">
-
 </head>
-
 <body>
-
 <div class="container-xl py-4">
-
 <h1 class="mb-4">Expense History</h1>
-
 <div class="card mb-4">
-
 <div class="card-body">
-
 <div class="row">
-
 <div class="col-md-4">
 <select class="form-select">
 <option>June 2026</option>
 <option>July 2026</option>
 </select>
 </div>
-
 <div class="col-md-4">
 <input
 type="date"
 class="form-control">
 </div>
-
 <div class="col-md-4">
 <button class="btn btn-primary">
 Search
 </button>
 </div>
-
 </div>
-
 </div>
-
 </div>
-
 <div class="card">
-
 <div class="table-responsive">
-
 <table class="table card-table">
-
 <thead>
-
 <tr>
 <th>Date</th>
 <th>Food</th>
@@ -66,50 +50,33 @@ Search
 <th>Total</th>
 <th>Actions</th>
 </tr>
-
 </thead>
-
 <tbody>
-
 <tr>
-
 <td>10-Jun-2026</td>
 <td>150</td>
 <td>50</td>
 <td>100</td>
 <td>30</td>
 <td>330</td>
-
 <td>
-
 <button class="btn btn-warning btn-sm">
 Edit
 </button>
-
 <button class="btn btn-danger btn-sm">
 Delete
 </button>
-
 </td>
-
 </tr>
-
 </tbody>
-
 </table>
-
 </div>
-
 </div>
-
 </div>
-
 <script src="js/history.js"></script>
 <div class="spinner-overlay" id="spinner">
-
 <div class="spinner"></div>
-
 </div>
-
+<script src="js/sw-register.js"></script>
 </body>
 </html>

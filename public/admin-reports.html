@@ -1,212 +1,122 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
-
 <head>
+<link rel="manifest" href="manifest.json">
+<link rel="icon" href="images/logo.png">
+<link rel="apple-touch-icon" href="images/logo.png">
+<meta name="theme-color" content="#206bc4">
 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Admin Reports - Spense</title>
-
 <link href="https://cdn.jsdelivr.net/npm/@tabler/core@latest/dist/css/tabler.min.css" rel="stylesheet">
-
 <link rel="stylesheet" href="css/admin-reports.css">
-
 </head>
-
 <body>
-
 <div class="container-xl py-4">
-
 <div class="d-flex justify-content-between align-items-center mb-4">
-
 <h1>Admin Reports</h1>
-
 <span class="badge bg-green">
 Super Admin
 </span>
-
 </div>
-
 <!-- FILTERS -->
-
 <div class="card mb-4">
-
 <div class="card-header">
 Report Filters
 </div>
-
 <div class="card-body">
-
 <div class="row">
-
 <div class="col-md-3">
-
 <label class="form-label">
 Month
 </label>
-
 <select class="form-select">
-
 <option>January</option>
 <option>February</option>
 <option>March</option>
 <option>April</option>
 <option>May</option>
 <option selected>June</option>
-
 </select>
-
 </div>
-
 <div class="col-md-3">
-
 <label class="form-label">
 Year
 </label>
-
 <select class="form-select">
-
 <option>2026</option>
 <option>2027</option>
-
 </select>
-
 </div>
-
 <div class="col-md-3">
-
 <label class="form-label">
 User
 </label>
-
 <select class="form-select">
-
 <option>All Users</option>
 <option>Sanjay</option>
 <option>Arun</option>
 <option>Karthik</option>
-
 </select>
-
 </div>
-
 <div class="col-md-3 d-flex align-items-end">
-
 <button class="btn btn-primary w-100">
-
 Generate Report
-
 </button>
-
 </div>
-
 </div>
-
 </div>
-
 </div>
-
 <!-- DOWNLOAD BUTTONS -->
-
 <div class="row mb-4">
-
 <div class="col-md-4">
-
 <button class="btn btn-success w-100">
-
 Download User Report
-
 </button>
-
 </div>
-
 <div class="col-md-4">
-
 <button class="btn btn-primary w-100">
-
 Download All Users Report
-
 </button>
-
 </div>
-
-
-
 </div>
-
 <!-- SUMMARY CARDS -->
-
 <div class="row mb-4">
-
 <div class="col-md-4">
-
 <div class="card stat-card">
-
 <div class="card-body">
-
 <h5>Total Users</h5>
-
 <h1>125</h1>
-
 </div>
-
 </div>
-
 </div>
-
 <div class="col-md-4">
-
 <div class="card stat-card">
-
 <div class="card-body">
-
 <h5>Total Records</h5>
-
 <h1>3245</h1>
-
 </div>
-
 </div>
-
 </div>
-
 <div class="col-md-4">
-
 <div class="card stat-card">
-
 <div class="card-body">
-
 <h5>Monthly Expense</h5>
-
 <h1>₹2,40,000</h1>
-
 </div>
-
 </div>
-
 </div>
-
 </div>
-
 <!-- SUMMARY TABLE -->
-
 <div class="card">
-
 <div class="card-header">
-
 Monthly Summary
-
 </div>
-
 <div class="table-responsive">
-
 <table class="table card-table">
-
 <thead>
-
 <tr>
-
 <th>User</th>
 <th>Total Records</th>
 <th>Food</th>
@@ -214,15 +124,10 @@ Monthly Summary
 <th>CLG</th>
 <th>Misc</th>
 <th>Total Spend</th>
-
 </tr>
-
 </thead>
-
 <tbody>
-
 <tr>
-
 <td>Sanjay</td>
 <td>245</td>
 <td>3500</td>
@@ -230,11 +135,8 @@ Monthly Summary
 <td>2200</td>
 <td>1000</td>
 <td>8500</td>
-
 </tr>
-
 <tr>
-
 <td>Arun</td>
 <td>190</td>
 <td>2500</td>
@@ -242,26 +144,16 @@ Monthly Summary
 <td>1800</td>
 <td>800</td>
 <td>6300</td>
-
 </tr>
-
 </tbody>
-
 </table>
-
 </div>
-
 </div>
-
 </div>
-
 <script src="js/admin-reports.js"></script>
 <div class="spinner-overlay" id="spinner">
-
 <div class="spinner"></div>
-
 </div>
-
+<script src="js/sw-register.js"></script>
 </body>
-
 </html>

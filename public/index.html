@@ -1,124 +1,84 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
+<link rel="manifest" href="manifest.json">
+<link rel="icon" href="images/logo.png">
+<link rel="apple-touch-icon" href="images/logo.png">
+<meta name="theme-color" content="#206bc4">
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Spense</title>
-
 <link href="https://cdn.jsdelivr.net/npm/@tabler/core@latest/dist/css/tabler.min.css" rel="stylesheet">
-
 <link rel="stylesheet" href="css/style.css">
-
 </head>
-
 <body>
-
 <!-- HEADER -->
 <header class="navbar navbar-expand-md shadow-sm">
     <div class="container-xl">
-
         <a class="navbar-brand d-flex align-items-center" href="#">
             <img src="images/logo.png"
                  width="50"
                  height="50"
                  class="me-2">
-
             <span class="fs-2 fw-bold">Spense</span>
         </a>
-
         <div class="ms-auto">
             <a href="https://www.instagram.com/snaro.co?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
                target="_blank"
                class="text-decoration-none">
-
-                📷 @snaro.co
-
+                📎 @snaro.co
             </a>
         </div>
-
     </div>
 </header>
-
 <!-- HERO -->
 <div class="page page-center">
-
     <div class="container container-tight py-5">
-
         <div class="text-center">
-
             <img src="images/logo.png"
                  width="150"
                  class="mb-4">
-
             <h1 class="display-4 fw-bold">
                 Welcome to Spense
             </h1>
-
             <p class="text-secondary mb-5">
                 Smart Expense Tracking & Analytics
             </p>
-
         </div>
-
         <div class="card card-md shadow-lg">
-
             <div class="card-body">
-
                 <div class="d-grid gap-3">
-
                     <a href="login.html"
                        class="btn btn-primary btn-lg">
-
                         Login as User
-
                     </a>
-
                     <a href="admin-login.html"
                        class="btn btn-dark btn-lg">
-
                         Login as Admin
-
                     </a>
-
                     <a href="register.html"
                        class="btn btn-outline-primary btn-lg">
-
                         Register / New User
-
                     </a>
-
                 </div>
-
             </div>
-
         </div>
-
     </div>
-
 </div>
-
 <!-- FOOTER -->
 <footer class="footer footer-transparent">
-
     <div class="container-xl text-center py-3">
-
         Checkout our official website
-
         <br>
-
         <a href="http://snaro.free.nf" target="_blank" rel="noopener noreferrer">Visit Snaro</a>
-
     </div>
-
 </footer>
-
 <script src="https://cdn.jsdelivr.net/npm/@tabler/core@latest/dist/js/tabler.min.js"></script>
 <div class="spinner-overlay" id="spinner">
-
 <div class="spinner"></div>
-
 </div>
-
+<script src="js/sw-register.js"></script>
 </body>
 </html>

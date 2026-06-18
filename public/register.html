@@ -1,251 +1,168 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
-
 <head>
+<link rel="manifest" href="manifest.json">
+<link rel="icon" href="images/logo.png">
+<link rel="apple-touch-icon" href="images/logo.png">
+<meta name="theme-color" content="#206bc4">
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Register - Spense</title>
-
 <link href="https://cdn.jsdelivr.net/npm/@tabler/core@latest/dist/css/tabler.min.css" rel="stylesheet">
-
 <link rel="stylesheet" href="css/style.css">
 </head>
-
 <header class="navbar navbar-expand-md shadow-sm">
     <div class="container-xl">
-
         <a class="navbar-brand d-flex align-items-center" href="#">
             <img src="images/logo.png"
                  width="50"
                  height="50"
                  class="me-2">
-
             <span class="fs-2 fw-bold">Spense</span>
         </a>
-
         <div class="ms-auto">
-
           <a href="index.html"
        class="btn btn-outline-secondary btn-sm">
-
         ← Back
-
     </a>
             <a href="https://www.instagram.com/snaro.co?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
                target="_blank"
                class="text-decoration-none">
-
-                📷 @snaro.co
-
+                📎 @snaro.co
             </a>
         </div>
-
     </div>
 </header>
-
 <body>
-
 <div class="page page-center">
-
 <div class="container container-tight py-4">
-
 <div class="text-center mb-4">
-
 <img src="images/logo.png"
      width="100"
      class="mb-3">
-
 <h1 class="fw-bold">
 Create Account
 </h1>
-
 <p class="text-secondary">
 Start tracking your expenses today
 </p>
-
 </div>
-
 <div class="card card-md shadow">
-
 <div class="card-body">
-
 <form id="registerForm">
-
 <div class="mb-3">
-
 <label class="form-label">
 Full Name
 </label>
-
 <input
 type="text"
 id="name"
 class="form-control"
 placeholder="Enter full name"
 required>
-
 </div>
-
 <div class="mb-3">
-
 <label class="form-label">
 Email
 </label>
-
 <input
 type="email"
 id="email"
 class="form-control"
 placeholder="Enter email"
 required>
-
 </div>
-
 <div class="row">
-
 <div class="col-8">
-
 <input
 type="text"
 id="otp"
 class="form-control"
 placeholder="Enter OTP">
-
 </div>
-
 <div class="col-4">
-
 <button
 type="button"
 id="sendOtpBtn"
 class="btn btn-warning w-100">
-
 Send OTP
-
 </button>
-
-
-
 </div>
 <div class="mt-2">
-
 <small class="text-warning">
-
 ⚠ If OTP is not received, please check your Spam/Junk folder.
-
 </small>
-
 </div>
-
 </div>
-
 <div class="mt-2">
-
 <button
 type="button"
 id="verifyOtpBtn"
 class="btn btn-success btn-sm">
-
 Verify OTP
-
 </button>
-
 <span
 id="otpStatus"
 class="ms-2 text-danger">
-
 Not Verified
-
 </span>
-
 </div>
-
 <div class="mb-3">
-
 <label class="form-label">
 Password
 </label>
-
 <input
 type="password"
 id="password"
 class="form-control"
 placeholder="Enter password"
 required>
-
 </div>
-
 <div class="mb-3">
-
 <label class="form-label">
 Confirm Password
 </label>
-
 <input
 type="password"
 id="confirmPassword"
 class="form-control"
 placeholder="Confirm Password"
 required>
-
 </div>
-
 <div class="mb-3">
-
 <label class="form-check">
-
 <input
 type="checkbox"
 class="form-check-input"
 onclick="togglePassword()">
-
 <span class="form-check-label">
 Show Password
 </span>
-
 </label>
-
 </div>
-
 <div class="form-footer">
-
 <button
 type="submit"
 class="btn btn-primary w-100">
-
 Register
-
 </button>
-
 </div>
-
 </form>
-
 </div>
-
 </div>
-
 <div class="text-center mt-3">
-
 Already have an account?
-
 <a href="login.html">
 Login
 </a>
-
 </div>
-
 </div>
-
 </div>
-
 <script src="js/register.js"></script>
 <div class="spinner-overlay" id="spinner">
-
 <div class="spinner"></div>
-
 </div>
-
+<script src="js/sw-register.js"></script>
 </body>
 </html>
