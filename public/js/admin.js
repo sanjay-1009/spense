@@ -16,7 +16,7 @@ window.location.href =
 
 }
 fetch(
-"http://localhost:5000/api/admin/stats"
+'${API_URL}/api/admin/stats'
 )
 .then(res => res.json())
 .then(data => {
@@ -47,7 +47,7 @@ data.activeToday || 0;
 .catch(console.error);
 
 fetch(
-"http://localhost:5000/api/admin/users"
+'${API_URL}/api/admin/users'
 )
 .then(res => res.json())
 .then(users => {
@@ -102,7 +102,7 @@ Delete
 function downloadExcel(id){
 
 window.open(
-`http://localhost:5000/api/admin/export-user/${id}`
+`${API_URL}/api/admin/export-user/${id}`
 );
 
 }
@@ -115,7 +115,7 @@ return;
 }
 
 fetch(
-`http://localhost:5000/api/admin/user/${id}`,
+`${API_URL}/api/admin/user/${id}`,
 {
 method:"DELETE"
 }
@@ -134,7 +134,7 @@ location.reload();
 function downloadAllUsers(){
 
 window.open(
-"http://localhost:5000/api/admin/export-all-users"
+'${API_URL}/api/admin/export-all-users'
 );
 
 }

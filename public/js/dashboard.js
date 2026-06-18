@@ -85,8 +85,8 @@ document.getElementById(
 await fetch(
 
 expenseId
-? `http://localhost:5000/api/expense/update/${expenseId}`
-: "http://localhost:5000/api/expense/add",
+? `${API_URL}/api/expense/update/${expenseId}`
+: '${API_URL}/api/expense/add',
 
 {
     method:
@@ -126,7 +126,7 @@ expenseId
 
 
 fetch(
-`http://localhost:5000/api/expense/user/${userId}`
+`${API_URL}/api/expense/user/${userId}`
 )
 .then(res => res.json())
 .then(data => {
@@ -200,7 +200,7 @@ Delete
 });
 
 fetch(
-    `http://localhost:5000/api/dashboard/stats/${userId}`
+    `${API_URL}/api/dashboard/stats/${userId}`
 )
 .then(res => res.json())
 .then(data => {
@@ -233,7 +233,7 @@ fetch(
 });
 
 fetch(
-`http://localhost:5000/api/dashboard/chart/${userId}`
+`${API_URL}/api/dashboard/chart/${userId}`
 )
 .then(res => res.json())
 .then(data => {
@@ -272,7 +272,7 @@ fetch(
 });
 
 fetch(
-`http://localhost:5000/api/dashboard/category-chart/${userId}`
+`${API_URL}/api/dashboard/category-chart/${userId}`
 )
 .then(res => res.json())
 .then(data => {
@@ -342,7 +342,7 @@ try{
 
 const response =
 await fetch(
-`http://localhost:5000/api/expense/delete/${id}`,
+`${API_URL}/api/expense/delete/${id}`,
 {
 method:"DELETE"
 }
@@ -373,7 +373,7 @@ alert(
 function editExpense(id){
 
 fetch(
-`http://localhost:5000/api/expense/user/${userId}`
+`${API_URL}/api/expense/user/${userId}`
 )
 .then(res => res.json())
 .then(data => {
