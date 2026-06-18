@@ -4,7 +4,7 @@ const axios = require("axios");
 // Send OTP Email using Brevo API
 const sendBrevoEmail = async (email, otp) => {
 
-```
+
 await axios.post(
     "https://api.brevo.com/v3/smtp/email",
     {
@@ -22,7 +22,6 @@ await axios.post(
         subject: "Spense Email Verification",
 
         htmlContent: `
-```
 
 <div style="font-family:Arial;padding:20px">
 
@@ -51,21 +50,22 @@ Spense Expense Tracker
 </p>
 
 </div>
-`
-        },
-        {
-            headers: {
-                "api-key": process.env.BREVO_API_KEY,
-                "Content-Type": "application/json"
-            }
+
+        `
+      },
+      {
+        headers: {
+          "api-key": process.env.BREVO_API_KEY,
+          "Content-Type": "application/json"
         }
+      }
     );
 };
 
 // Generate OTP + Save + Send Email
 const generateAndSendOtp = (email, res) => {
 
-```
+
 const otp =
     Math.floor(
         100000 + Math.random() * 900000
@@ -121,14 +121,14 @@ db.query(
 
     }
 );
-```
+
 
 };
 
 // REGISTER OTP
 const sendRegisterOtp = (req, res) => {
 
-```
+
 const { email } = req.body;
 
 const sql =
@@ -159,14 +159,14 @@ db.query(
 
     }
 );
-```
+
 
 };
 
 // FORGOT PASSWORD OTP
 const sendResetOtp = (req, res) => {
 
-```
+
 const { email } = req.body;
 
 const sql =
@@ -197,14 +197,14 @@ db.query(
 
     }
 );
-```
+
 
 };
 
 // VERIFY OTP
 const verifyOtp = (req, res) => {
 
-```
+
 const { email, otp } = req.body;
 
 const sql = `
@@ -247,7 +247,7 @@ db.query(
 
     }
 );
-```
+
 
 };
 
