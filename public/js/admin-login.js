@@ -28,7 +28,7 @@ try{
 
 const response =
 await fetch(
-'${API_URL}/api/auth/login',
+`${API_URL}/api/auth/login`,
 {
 method:"POST",
 

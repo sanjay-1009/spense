@@ -86,7 +86,7 @@ await fetch(
 
 expenseId
 ? `${API_URL}/api/expense/update/${expenseId}`
-: '${API_URL}/api/expense/add',
+: `${API_URL}/api/expense/add`,
 
 {
     method:

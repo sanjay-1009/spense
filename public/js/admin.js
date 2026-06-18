@@ -16,7 +16,7 @@ window.location.href =
 
 }
 fetch(
-'${API_URL}/api/admin/stats'
+`${API_URL}/api/admin/stats`
 )
 .then(res => res.json())
 .then(data => {
@@ -47,7 +47,7 @@ data.activeToday || 0;
 .catch(console.error);
 
 fetch(
-'${API_URL}/api/admin/users'
+`${API_URL}/api/admin/users`
 )
 .then(res => res.json())
 .then(users => {
@@ -134,7 +134,7 @@ location.reload();
 function downloadAllUsers(){
 
 window.open(
-'${API_URL}/api/admin/export-all-users'
+`${API_URL}/api/admin/export-all-users`
 );
 
 }

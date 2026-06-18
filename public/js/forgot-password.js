@@ -13,7 +13,7 @@ document.getElementById("email").value;
 
 const response =
 await fetch(
-'${API_URL}/api/otp/reset',
+`${API_URL}/api/otp/reset`,
 {
 method:"POST",
 headers:{
@@ -47,7 +47,7 @@ document.getElementById("otp").value;
 
 const response =
 await fetch(
-'${API_URL}/api/otp/verify',
+`${API_URL}/api/otp/verify`,
 {
 method:"POST",
 headers:{
@@ -120,7 +120,7 @@ return;
 
 const response =
 await fetch(
-'${API_URL}/api/password/reset',
+`${API_URL}/api/password/reset`,
 {
 method:"POST",
 headers:{

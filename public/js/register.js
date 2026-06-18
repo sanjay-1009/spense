@@ -43,7 +43,7 @@ try{
 
 const response =
 await fetch(
-'${API_URL}/api/otp/register',
+`${API_URL}/api/otp/register`,
 {
 method:"POST",
 
@@ -98,7 +98,7 @@ try{
 
 const response =
 await fetch(
-'${API_URL}/api/otp/verify',
+`${API_URL}/api/otp/verify`,
 {
 method:"POST",
 
@@ -204,7 +204,7 @@ try{
 
 const response =
 await fetch(
-'${API_URL}/api/auth/register',
+`${API_URL}/api/auth/register`,
 {
 method:"POST",
 
