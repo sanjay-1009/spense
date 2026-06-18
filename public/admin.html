@@ -32,11 +32,27 @@ Spense Admin
 
 </div>
 
-<div class="ms-auto">
+<div class="ms-auto d-flex align-items-center gap-3">
+
+<a href="https://instagram.com/spense_official"
+   target="_blank"
+   class="text-decoration-none">
+
+📷 @spense_official
+
+</a>
 
 <span class="badge bg-green">
 Super Admin
 </span>
+
+<button
+class="btn btn-danger"
+onclick="logout()">
+
+Logout
+
+</button>
 
 </div>
 
@@ -60,7 +76,7 @@ Super Admin
 
 <h4>Total Users</h4>
 
-<h1 id="totalUsers">125</h1>
+<h1 id="totalUsers">0</h1>
 
 </div>
 
@@ -76,7 +92,7 @@ Super Admin
 
 <h4>Active Today</h4>
 
-<h1>72</h1>
+<h1 id="activeToday">0</h1>
 
 </div>
 
@@ -92,7 +108,7 @@ Super Admin
 
 <h4>Total Records</h4>
 
-<h1>3245</h1>
+<h1 id="totalExpenses">0</h1>
 
 </div>
 
@@ -108,7 +124,7 @@ Super Admin
 
 <h4>Monthly Expenses</h4>
 
-<h1>₹2.4L</h1>
+<h1 id="totalSpending">0</h1>
 
 </div>
 
@@ -144,17 +160,15 @@ Monthly Reports
 
 <div class="col-md-8">
 
-<button class="btn btn-primary">
+<button
+class="btn btn-primary"
+onclick="downloadAllUsers()">
 
 Download All Users Report
 
 </button>
 
-<button class="btn btn-success">
 
-Download AI Dataset
-
-</button>
 
 </div>
 
@@ -185,82 +199,15 @@ Registered Users
 <th>Name</th>
 <th>Email</th>
 <th>Last Active</th>
-<th>Records</th>
+<th>Role</th>
 <th>Actions</th>
 
 </tr>
 
 </thead>
 
-<tbody>
+<tbody id="usersTable">
 
-<tr>
-
-<td>Sanjay</td>
-
-<td>sanjay@gmail.com</td>
-
-<td>10-Jun-2026 09:30 AM</td>
-
-<td>245</td>
-
-<td>
-
-<button class="btn btn-primary btn-sm">
-
-View
-
-</button>
-
-<button class="btn btn-success btn-sm">
-
-Excel
-
-</button>
-
-<button class="btn btn-danger btn-sm">
-
-Delete
-
-</button>
-
-</td>
-
-</tr>
-
-<tr>
-
-<td>Arun</td>
-
-<td>arun@gmail.com</td>
-
-<td>09-Jun-2026 11:15 PM</td>
-
-<td>180</td>
-
-<td>
-
-<button class="btn btn-primary btn-sm">
-
-View
-
-</button>
-
-<button class="btn btn-success btn-sm">
-
-Excel
-
-</button>
-
-<button class="btn btn-danger btn-sm">
-
-Delete
-
-</button>
-
-</td>
-
-</tr>
 
 </tbody>
 
@@ -282,6 +229,21 @@ Delete
 <div class="spinner"></div>
 
 </div>
+
+<footer class="text-center py-3 border-top mt-5">
+
+<p class="mb-1">
+
+</p>
+
+<a href="snaro.free.nf"
+   class="text-decoration-none">
+
+Offical Webpage: Snaro.co
+
+</a>
+
+</footer>
 
 </body>
 

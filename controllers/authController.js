@@ -8,45 +8,78 @@ const register = async (req, res) => {
 
         const { name, email, password } = req.body;
 
-        // Check if email already exists
-        const checkSql =
-            "SELECT * FROM users WHERE email=?";
+        const otpSql = `
+            SELECT *
+            FROM email_otps
+            WHERE email=?
+            AND verified=TRUE
+        `;
 
         db.query(
-            checkSql,
+            otpSql,
             [email],
-            async (err, result) => {
+            async (err, otpResult) => {
 
                 if (err) {
                     return res.status(500).json(err);
                 }
 
-                if (result.length > 0) {
+                if (otpResult.length === 0) {
 
                     return res.status(400).json({
-                        message: "Email already exists"
+                        message:
+                        "Please verify your email first"
                     });
 
                 }
 
-                const hashedPassword =
-                    await bcrypt.hash(password, 10);
-
-                const sql =
-                    "INSERT INTO users(name,email,password) VALUES(?,?,?)";
+                const checkSql =
+                    "SELECT * FROM users WHERE email=?";
 
                 db.query(
-                    sql,
-                    [name, email, hashedPassword],
-                    (err, result) => {
+                    checkSql,
+                    [email],
+                    async (err, result) => {
 
                         if (err) {
                             return res.status(500).json(err);
                         }
 
-                        res.status(201).json({
-                            message: "User Registered Successfully"
-                        });
+                        if (result.length > 0) {
+
+                            return res.status(400).json({
+                                message: "Email already exists"
+                            });
+
+                        }
+
+                        const hashedPassword =
+                            await bcrypt.hash(password, 10);
+
+                        const sql =
+                            "INSERT INTO users(name,email,password) VALUES(?,?,?)";
+
+                        db.query(
+                            sql,
+                            [name, email, hashedPassword],
+                            (err, result) => {
+
+                                if (err) {
+                                    return res.status(500).json(err);
+                                }
+
+                                db.query(
+                                    "DELETE FROM email_otps WHERE email=?",
+                                    [email]
+                                );
+
+                                res.status(201).json({
+                                    message:
+                                    "User Registered Successfully"
+                                });
+
+                            }
+                        );
 
                     }
                 );
@@ -54,7 +87,8 @@ const register = async (req, res) => {
             }
         );
 
-    } catch (error) {
+    }
+    catch (error) {
 
         res.status(500).json(error);
 
@@ -96,6 +130,20 @@ const login = (req, res) => {
             });
 
         }
+
+        const updateSql =
+"UPDATE users SET last_active = NOW() WHERE id=?";
+
+        db.query(
+updateSql,
+[user.id],
+(err) => {
+
+if(err){
+console.log(err);
+}
+
+});
 
         const token = jwt.sign(
             {

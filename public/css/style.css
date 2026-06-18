@@ -14,3 +14,8 @@ border-radius:12px;
 .form-control{
 border-radius:10px;
 }
+
+.page-center {
+  justify-content: flex-start;
+  padding-top: 30px;
+}

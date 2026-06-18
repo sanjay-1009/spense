@@ -17,3 +17,17 @@ font-weight:600;
 .btn{
 border-radius:10px;
 }
+
+.page-center {
+  justify-content: flex-start;
+  padding-top: 30px;
+}
+@media (max-width: 768px) {
+  .stat-card {
+    margin-bottom: 15px;
+  }
+
+  .table-responsive {
+    overflow-x: auto;
+  }
+}

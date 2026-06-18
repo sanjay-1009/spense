@@ -10,9 +10,14 @@ const expenseRoutes =require("./routes/expenseRoutes");
 const reportRoutes =require("./routes/reportRoutes");
 const adminRoutes =require("./routes/adminRoutes");
 const dashboardRoutes =require("./routes/dashboardRoutes");
+const testMailRoute =require("./routes/testMailRoute");
+const otpRoutes =require("./routes/otpRoutes");
+const passwordRoutes =require("./routes/passwordRoutes");
 
 app.use(cors());
 app.use(express.json());
+
+app.use(express.static("public"));
 
 app.use("/api/auth",authRoutes);
 
@@ -23,6 +28,12 @@ app.use("/api/report",reportRoutes);
 app.use("/api/admin",adminRoutes);
 
 app.use("/api/dashboard",dashboardRoutes);
+
+app.use("/test-mail",testMailRoute);
+
+app.use("/api/otp",otpRoutes);
+
+app.use("/api/password",passwordRoutes);
 
 app.get("/", (req, res) => {
 

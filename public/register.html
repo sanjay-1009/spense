@@ -12,6 +12,38 @@
 <link rel="stylesheet" href="css/style.css">
 </head>
 
+<header class="navbar navbar-expand-md shadow-sm">
+    <div class="container-xl">
+
+        <a class="navbar-brand d-flex align-items-center" href="#">
+            <img src="images/logo.png"
+                 width="50"
+                 height="50"
+                 class="me-2">
+
+            <span class="fs-2 fw-bold">Spense</span>
+        </a>
+
+        <div class="ms-auto">
+
+          <a href="index.html"
+       class="btn btn-outline-secondary btn-sm">
+
+        ← Back
+
+    </a>
+            <a href="https://www.instagram.com/snaro.co?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+               target="_blank"
+               class="text-decoration-none">
+
+                📷 @snaro.co
+
+            </a>
+        </div>
+
+    </div>
+</header>
+
 <body>
 
 <div class="page page-center">
@@ -67,6 +99,65 @@ id="email"
 class="form-control"
 placeholder="Enter email"
 required>
+
+</div>
+
+<div class="row">
+
+<div class="col-8">
+
+<input
+type="text"
+id="otp"
+class="form-control"
+placeholder="Enter OTP">
+
+</div>
+
+<div class="col-4">
+
+<button
+type="button"
+id="sendOtpBtn"
+class="btn btn-warning w-100">
+
+Send OTP
+
+</button>
+
+
+
+</div>
+<div class="mt-2">
+
+<small class="text-warning">
+
+⚠ If OTP is not received, please check your Spam/Junk folder.
+
+</small>
+
+</div>
+
+</div>
+
+<div class="mt-2">
+
+<button
+type="button"
+id="verifyOtpBtn"
+class="btn btn-success btn-sm">
+
+Verify OTP
+
+</button>
+
+<span
+id="otpStatus"
+class="ms-2 text-danger">
+
+Not Verified
+
+</span>
 
 </div>
 
