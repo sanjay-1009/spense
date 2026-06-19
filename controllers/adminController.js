@@ -152,16 +152,17 @@ const exportMonthReport = async (req, res) => {
 const getAdminStats = (req,res) => {
 
     const sql = `
-        SELECT
-        (SELECT COUNT(*) FROM users) AS totalUsers,
-        (SELECT COUNT(*) FROM expenses) AS totalExpenses,
-        (SELECT IFNULL(SUM(total),0) FROM expenses) AS totalSpending,
-        (
-            SELECT COUNT(*)
-            FROM users
-            WHERE DATE(CONVERT_TZ(last_active,'+00:00','+05:30')) = CURDATE()
-        ) AS activeToday
-    `;
+    SELECT
+    (SELECT COUNT(*) FROM users) AS totalUsers,
+    (SELECT COUNT(*) FROM expenses) AS totalExpenses,
+    (SELECT IFNULL(SUM(total),0) FROM expenses) AS totalSpending,
+    (
+        SELECT COUNT(*)
+        FROM users
+        WHERE DATE(CONVERT_TZ(last_active,'+00:00','+05:30'))
+        = DATE(CONVERT_TZ(NOW(),'+00:00','+05:30'))
+    ) AS activeToday
+`;
 
     db.query(sql,(err,result)=>{
 
