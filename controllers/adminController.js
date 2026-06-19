@@ -159,7 +159,7 @@ const getAdminStats = (req,res) => {
         (
             SELECT COUNT(*)
             FROM users
-            WHERE DATE(last_active) = CURDATE()
+            WHERE DATE(CONVERT_TZ(last_active,'+00:00','+05:30')) = CURDATE()
         ) AS activeToday
     `;
 
