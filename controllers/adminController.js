@@ -10,7 +10,7 @@ const getAllUsers = (req, res) => {
         name,
         email,
         role,
-        last_active,
+        CONVERT_TZ(last_active,'+00:00','+05:30') AS last_active,
         created_at
         FROM users
     `;
