@@ -68,7 +68,7 @@ table.innerHTML += `
 
 <td>${user.email}</td>
 
-<td>{user.last_active
+<td>${user.last_active
     ? new Date(user.last_active).toLocaleString("en-IN")
     : "-"}</td>
 
